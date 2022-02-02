@@ -1,0 +1,95 @@
+
+.logo-img{
+  width: 90px;
+  border-radius: 40px;
+  margin-left: 20px;
+}
+
+.top-sec{
+  height: 1000px;
+  background: rgb(33,31,31);
+  background: -webkit-linear-gradient(rgba(33,31,31,1) 14%, rgba(65,53,53,0.14813258066898638) 51%, rgba(215,218,218,1) 81%);
+  background: -o-linear-gradient(rgba(33,31,31,1) 14%, rgba(65,53,53,0.14813258066898638) 51%, rgba(215,218,218,1) 81%);
+  background: linear-gradient(rgba(33,31,31,1) 14%, rgba(65,53,53,0.14813258066898638) 51%, rgba(215,218,218,1) 81%);
+}
+
+.ulstyle{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-link{
+  font-family: 'Dongle', sans-serif;
+}
+
+.navbar{
+  margin: 60px auto;
+}
+
+.nav-item{
+  margin: auto 40px;
+}
+
+.col-auto{
+  margin-top: 50px;
+}
+
+.col-6{
+  text-align: center;
+  padding: 40px;
+}
+
+.carousel{
+  width: 90%;
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  /* z-index: ; */
+}
+
+
+.carousel-inner{
+  border-radius: 10%;
+
+}
+
+.compdiv{
+  width: 70%;
+  margin: 50px auto;
+  position: relative;
+}
+
+.comp{
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* footer */
+
+#footer{
+  text-align: center;
+  padding: 50px 0 20px;
+  font-weight: lighter;
+}
+
+.footer-icon{
+  padding: 0 0.5rem 1rem;
+  color: black;
+}
+
+.para-footer{
+  color: #828990;
+}
+
+h2{
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+  margin: 30px auto;
+  text-shadow: 2px 2px 4px;
+}
+
+h3{
+  font-family: 'Arima Madurai', cursive;
+}
