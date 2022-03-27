@@ -1,4 +1,5 @@
 const express = require('express');
+const ejs = require('ejs');
 const bodyparser = require('body-parser');
 const mongoose = require('mongoose');
 const passport = require('passport');
@@ -6,6 +7,8 @@ const session = require('express-session');
 const passportLocalMongoose = require('passport-local-mongoose');
 
 const app = express();
+
+app.set("view engine", "ejs");
 
 app.use(express.static("public"));
 app.use(bodyparser.urlencoded({ extended: true }))
@@ -42,15 +45,15 @@ passport.deserializeUser(User.deserializeUser());
 
 
 app.get("/",function(req,res){
-  res.sendFile(__dirname + "/index.html");
+  res.render("index");
 });
 
 app.get("/about",function(req,res){
-  res.sendFile(__dirname + "/about.html");
+  res.render("about");
 });
 
 app.get("/signup",function(req,res){
-  res.sendFile(__dirname + "/signup.html");
+  res.render("signup");
 });
 
 
@@ -58,7 +61,7 @@ app.post("/signup", function(req,res){
   // console.log(req.body);
 
   //************ ArHubUserDB code for Create Account ***********
-  if (req.body.creaccbtn === "creaccbtn"){
+  if (req.body.creaccbtn == "creaccbtn"){
     console.log("User requested to create account");
     User.register({username: req.body.email, firstName: req.body.fname, lastName: req.body.lname}, req.body.paswd, function(err, user){
   // console.log("the user log is : " + user);
@@ -76,7 +79,7 @@ app.post("/signup", function(req,res){
 });
   }
   //************ ArHubUserDB code for Sign-In ***********
-  else if (req.body.signinbtn){
+  else if (req.body.signinbtn =="signinbtn"){
     const user = new User({
 
       username: req.body.email,
@@ -103,7 +106,7 @@ app.post("/signup", function(req,res){
 
 app.get("/welcome",function(req,res){
   if(req.isAuthenticated()){
-    res.sendFile(__dirname + "/testweb.html");
+    res.render("testweb");
   }else{
     res.redirect("/signup");
   }
