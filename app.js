@@ -57,11 +57,11 @@ app.get("/signup",function(req,res){
 });
 
 
-app.post("/signup", function(req,res){
+app.post("/signup/creacc", function(req,res){
   // console.log(req.body);
 
   //************ ArHubUserDB code for Create Account ***********
-  if (req.body.creaccbtn == "creaccbtn"){
+
     console.log("User requested to create account");
     User.register({username: req.body.email, firstName: req.body.fname, lastName: req.body.lname}, req.body.paswd, function(err, user){
   // console.log("the user log is : " + user);
@@ -72,14 +72,16 @@ app.post("/signup", function(req,res){
     passport.authenticate("local") (req, res, function(){
       res.redirect("/welcome");
     });
-
-
-
   }
 });
-  }
+
+});
+
   //************ ArHubUserDB code for Sign-In ***********
-  else if (req.body.signinbtn =="signinbtn"){
+
+
+app.post("/signup", function(req, res){
+
     const user = new User({
 
       username: req.body.email,
@@ -91,16 +93,16 @@ app.post("/signup", function(req,res){
       console.log(err);
     }else{
       passport.authenticate("local")(req, res, function(){
+
         res.redirect("/welcome");
+
       });
     }
   });
 
-}else{
-  console.log("something went wrong");
-}
+})
 
-});
+
 
 
 
